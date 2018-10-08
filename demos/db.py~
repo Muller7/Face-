@@ -1,0 +1,23 @@
+
+#coding=utf-8
+import pymongo as pm
+import json
+
+
+
+client =pm.MongoClient('localhost', 27017)
+db  = client.get_database('Face')
+collection = db.get_collection('photo')
+
+
+
+#测试一条数据
+a = collection.find_one()
+#url = collection.find_one()
+
+
+
+print a
+
+
+

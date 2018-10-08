@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Skyclass{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Face Identification</h1>
+</div>
+<div class="photo">
+    <h2>Real time photo</h2>
+    <img src="{{ url_for('static', filename='real_time.png') }}" class="img-rounded" alt="real_time" >
+    <h2>Registered photo</h2>
+
+    <img id="img" src=ip1 class="img-rounded" alt="Registered photo"  width="480" height="640">
+    <h3>student_id: {{ stu_id }} </h3>
+</div>
+
+<script type="text/javascript">
+var s_id ={{ stu_id }};
+var ip ="{{ url_for('static', filename='info/',_external=True) }}";
+var ip1=ip+s_id+'.jpg';
+document.getElementById("img").src=ip1;
+</script>
+{% endblock %}
